@@ -1,6 +1,14 @@
 # RN-weatherApp
+
 Weather Application built with React Native
+
 ## build
+
 `cd ./android`
-```js 
-gradlew clean aR```
+
+`gradlew clean aR`
+
+## 資料來源
+
+[OpenWeather](https://openweathermap.org/)  
+[Nominatim](https://nominatim.org/)

@@ -8,6 +8,7 @@ import {
   RefreshControl,
   ScrollView,
   Pressable,
+  useColorScheme,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import {PermissionsAndroid} from 'react-native';
@@ -17,6 +18,7 @@ const convertDate = (date, offset) => {
 };
 
 function ForeCast() {
+  const colorScheme = useColorScheme();
   const [data, setData] = useState('');
   const [refreshing, setRefreshing] = useState(false);
   const [extend, setExtend] = useState(false);
@@ -103,7 +105,11 @@ function ForeCast() {
 
   return (
     <ScrollView
-      style={{backgroundColor: 'white'}}
+      style={
+        colorScheme === 'dark'
+          ? {backgroundColor: '#121212'}
+          : {backgroundColor: 'white'}
+      }
       refreshControl={
         <RefreshControl
           refreshing={refreshing}
@@ -385,13 +391,13 @@ const styles = StyleSheet.create({
   },
   dateText: {
     color: 'green',
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: 'bold',
     fontFamily: 'monospace',
   },
   icon: {
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
 });
 

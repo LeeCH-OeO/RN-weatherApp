@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
+  useColorScheme,
   ToastAndroid,
   RefreshControl,
   ScrollView,
@@ -15,6 +15,7 @@ function CurrentData() {
   useEffect(() => {
     getLocation();
   }, []);
+  const colorScheme = useColorScheme();
   const [data, setData] = useState('');
   const [currentTime, setCurrentTime] = useState('');
   const [sunriseTime, setsunriseTime] = useState('');
@@ -101,7 +102,11 @@ function CurrentData() {
 
   return (
     <ScrollView
-      style={{backgroundColor: 'white'}}
+      style={
+        colorScheme === 'dark'
+          ? {backgroundColor: '#121212'}
+          : {backgroundColor: 'white'}
+      }
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={handleOnRefresh} />
       }>

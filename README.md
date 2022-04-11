@@ -1,6 +1,6 @@
 # RN-weatherApp
 
-Weather Application built with React Native
+Weather Application build with React Native
 
 ## install
 

@@ -2,6 +2,10 @@
 
 Weather Application built with React Native
 
+## install
+
+`npm install`
+
 ## build
 
 `cd ./android`

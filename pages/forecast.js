@@ -9,6 +9,7 @@ import {
   ScrollView,
   Pressable,
   useColorScheme,
+  Vibration,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import {PermissionsAndroid} from 'react-native';
@@ -46,6 +47,7 @@ function ForeCast() {
             ToastAndroid.SHORT,
             ToastAndroid.CENTER,
           );
+          Vibration.vibrate();
         },
         err => {
           if (err) {
@@ -64,6 +66,7 @@ function ForeCast() {
       }),
     );
   };
+
   const handleOnRefresh = () => {
     setRefreshing(true);
     getLocation();
@@ -142,6 +145,8 @@ function ForeCast() {
                   濕度: {data.daily[0].humidity}%{'\n'}
                   風速: {data.daily[0].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[0].uvi}
+                  {'\n'}
+                  降雨機率: {data.daily[0].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -172,6 +177,8 @@ function ForeCast() {
                   濕度: {data.daily[1].humidity}%{'\n'}
                   風速: {data.daily[1].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[1].uvi}
+                  {'\n'}
+                  降雨機率: {data.daily[1].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -202,6 +209,8 @@ function ForeCast() {
                   濕度: {data.daily[2].humidity}%{'\n'}
                   風速: {data.daily[2].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[2].uvi}
+                  {'\n'}
+                  降雨機率: {data.daily[2].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -232,6 +241,8 @@ function ForeCast() {
                   濕度: {data.daily[3].humidity}%{'\n'}
                   風速: {data.daily[3].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[3].uvi}
+                  {'\n'}
+                  降雨機率: {data.daily[3].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -262,6 +273,8 @@ function ForeCast() {
                   濕度: {data.daily[4].humidity}%{'\n'}
                   風速: {data.daily[4].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[4].uvi}
+                  {'\n'}
+                  降雨機率: {data.daily[4].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -292,6 +305,8 @@ function ForeCast() {
                   濕度: {data.daily[5].humidity}%{'\n'}
                   風速: {data.daily[5].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[5].uvi}
+                  {'\n'}
+                  降雨機率: {data.daily[5].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -322,6 +337,8 @@ function ForeCast() {
                   濕度: {data.daily[6].humidity}%{'\n'}
                   風速: {data.daily[6].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[6].uvi}
+                  {'\n'}
+                  降雨機率: {data.daily[6].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -353,6 +370,7 @@ function ForeCast() {
                   風速: {data.daily[7].wind_speed}m/s{'\n'}UV index:{' '}
                   {data.daily[7].uvi}
                   {'\n'}
+                  降雨機率: {data.daily[7].pop}
                 </Text>
               ) : (
                 <Text></Text>
@@ -371,7 +389,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
   },
   text: {
     color: 'green',
@@ -379,10 +396,10 @@ const styles = StyleSheet.create({
     fontFamily: 'monospace',
   },
   resultItem: {
-    borderColor: 'green',
-    borderWidth: 0.5,
     justifyContent: 'space-between',
     alignItems: 'center',
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.6,
   },
   dateView: {
     flexDirection: 'row',

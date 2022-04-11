@@ -7,6 +7,7 @@ import {
   ToastAndroid,
   RefreshControl,
   ScrollView,
+  Vibration,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import {PermissionsAndroid} from 'react-native';
@@ -43,6 +44,7 @@ function CurrentData() {
             ToastAndroid.SHORT,
             ToastAndroid.CENTER,
           );
+          Vibration.vibrate();
         },
         err => {
           if (err) {
@@ -118,7 +120,7 @@ function CurrentData() {
             {'\n'}
             {data ? data.current.weather[0].description : ''}
             {'\n'}
-            溫度:{data ? data.current.temp : ''}°C 體感溫度:{' '}
+            溫度: {data ? data.current.temp : ''}°C 體感溫度:{' '}
             {data ? data.current.feels_like : ''}°C {'\n'}
             UV index: {data ? data.current.uvi : ''}
             {'\n'}
@@ -128,9 +130,6 @@ function CurrentData() {
             {sunriseTime ? sunriseTime : ''}
             {'\n'}
             🌇:{sunsetTime ? sunsetTime : ''}
-            {/* {AQIData
-              ? `\nAQI:${AQIResult[AQIData.list[0].main.aqi - 1]}\n`
-              : '\n'} */}
           </Text>
         </View>
       </View>
@@ -145,7 +144,7 @@ function CurrentData() {
             {'\n'}
             {`NO₂: ${AQIData.list[0].components.no2} μg/m³`}
             {'\n'}
-            {`O₃ : ${AQIData.list[0].components.o3} μg/m³`}
+            {`O₃: ${AQIData.list[0].components.o3} μg/m³`}
             {'\n'}
             {`SO₂: ${AQIData.list[0].components.so2} μg/m³`}
             {'\n'}
@@ -168,7 +167,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.6,
   },
   result: {
     flex: 1,
@@ -188,8 +188,6 @@ const styles = StyleSheet.create({
     height: 150,
   },
   AqiResult: {
-    borderColor: 'green',
-    borderWidth: 0.5,
     justifyContent: 'center',
     alignItems: 'center',
   },

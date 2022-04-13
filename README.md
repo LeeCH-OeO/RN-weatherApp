@@ -6,6 +6,10 @@ Weather Application build with React Native
 
 `npm install`
 
+## dev
+
+`npm run android`
+
 ## build
 
 `cd ./android`

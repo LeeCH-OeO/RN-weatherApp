@@ -20,3 +20,8 @@ Weather Application build with React Native
 
 [OpenWeather](https://openweathermap.org/)  
 [Nominatim](https://nominatim.org/)
+
+## dependencies
+
+[React Native](https://reactnative.dev/)  
+[React Navigation](https://reactnavigation.org/)

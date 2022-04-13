@@ -7,7 +7,6 @@ import {
   ToastAndroid,
   RefreshControl,
   ScrollView,
-  Vibration,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import {PermissionsAndroid} from 'react-native';
@@ -44,7 +43,6 @@ function CurrentData() {
             ToastAndroid.SHORT,
             ToastAndroid.CENTER,
           );
-          Vibration.vibrate();
         },
         err => {
           if (err) {

@@ -9,7 +9,6 @@ import {
   ScrollView,
   Pressable,
   useColorScheme,
-  Vibration,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import {PermissionsAndroid} from 'react-native';
@@ -47,7 +46,6 @@ function ForeCast() {
             ToastAndroid.SHORT,
             ToastAndroid.CENTER,
           );
-          Vibration.vibrate();
         },
         err => {
           if (err) {

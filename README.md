@@ -19,7 +19,8 @@ Weather Application build with React Native
 ## 資料來源
 
 [OpenWeather](https://openweathermap.org/)  
-[Nominatim](https://nominatim.org/)
+[Nominatim](https://nominatim.org/)  
+[Icon](https://twitter.com/walfieee)
 
 ## dependencies
 

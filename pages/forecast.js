@@ -17,7 +17,7 @@ const convertDate = (date, offset) => {
   return convertDate;
 };
 
-function ForeCast() {
+function DailyForeCast() {
   const colorScheme = useColorScheme();
   const [data, setData] = useState('');
   const [refreshing, setRefreshing] = useState(false);
@@ -369,6 +369,7 @@ function ForeCast() {
                   {data.daily[7].uvi}
                   {'\n'}
                   降雨機率: {data.daily[7].pop}
+                  {'\n'}
                 </Text>
               ) : (
                 <Text></Text>
@@ -394,8 +395,8 @@ const styles = StyleSheet.create({
     fontFamily: 'monospace',
   },
   resultItem: {
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    // justifyContent: 'space-between',
+    // alignItems: 'center',
     borderBottomColor: 'gray',
     borderBottomWidth: 0.6,
   },
@@ -403,6 +404,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingLeft: 10,
   },
   dateText: {
     color: 'green',
@@ -411,9 +413,9 @@ const styles = StyleSheet.create({
     fontFamily: 'monospace',
   },
   icon: {
-    width: 70,
-    height: 70,
+    width: 100,
+    height: 100,
   },
 });
 
-export default ForeCast;
+export default DailyForeCast;

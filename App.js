@@ -2,9 +2,9 @@ import React from 'react';
 import {StatusBar, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import CurrentData from './pages/current';
-import ForeCast from './pages/forecast';
-
+import {CurrentData} from './pages/current';
+import DailyForeCast from './pages/forecast';
+import HourlyForecast from './pages/hourlyForeCast';
 const Tab = createMaterialTopTabNavigator();
 function App() {
   const colorScheme = useColorScheme();
@@ -35,7 +35,8 @@ function App() {
               }
         }>
         <Tab.Screen name="Current" component={CurrentData} />
-        <Tab.Screen name="ForeCast" component={ForeCast} />
+        <Tab.Screen name="Hourly" component={HourlyForecast} />
+        <Tab.Screen name="Daily " component={DailyForeCast} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -395,16 +395,14 @@ const styles = StyleSheet.create({
     fontFamily: 'monospace',
   },
   resultItem: {
-    // justifyContent: 'space-between',
-    // alignItems: 'center',
     borderBottomColor: 'gray',
     borderBottomWidth: 0.6,
+    paddingLeft: 10,
   },
   dateView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingLeft: 10,
   },
   dateText: {
     color: 'green',

@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     color: 'green',
     fontSize: 20,
     fontFamily: 'monospace',
+    fontWeight: 'bold',
   },
   resultItem: {
     borderBottomColor: 'gray',

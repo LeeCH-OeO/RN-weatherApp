@@ -113,29 +113,27 @@ function CurrentData() {
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={handleOnRefresh} />
       }>
-      <Pressable onPress={() => setExtend(!extend)}>
-        <View style={styles.body}>
-          <View style={styles.result}>
-            <Text style={styles.text}>
-              {cityName ? `${cityName} ` : `位置: ${latitude} ${longitude}\n`}
-              {currentTime ? currentTime : ''}
-              {'\n'}
-              {data ? data.current.weather[0].description : ''}
-              {'\n'}
-              溫度: {data ? data.current.temp : ''}°C 體感溫度:{' '}
-              {data ? data.current.feels_like : ''}°C {'\n'}
-              UV index: {data ? data.current.uvi : ''}
-              {'\n'}
-              濕度: {data ? data.current.humidity : ''}% {'\n'}
-              風速: {data ? data.current.wind_speed : ''}m/s {'\n'}
-              能見度: {data ? data.current.visibility : ''}m 🌅:
-              {sunriseTime ? sunriseTime : ''}
-              {'\n'}
-              🌇:{sunsetTime ? sunsetTime : ''}
-            </Text>
-          </View>
+      <View style={styles.body}>
+        <View style={styles.result}>
+          <Text style={styles.text}>
+            {cityName ? `${cityName} ` : `位置: ${latitude} ${longitude}\n`}
+            {currentTime ? currentTime : ''}
+            {'\n'}
+            {data ? data.current.weather[0].description : ''}
+            {'\n'}
+            溫度: {data ? data.current.temp : ''}°C 體感溫度:{' '}
+            {data ? data.current.feels_like : ''}°C {'\n'}
+            UV index: {data ? data.current.uvi : ''}
+            {'\n'}
+            濕度: {data ? data.current.humidity : ''}% {'\n'}
+            風速: {data ? data.current.wind_speed : ''}m/s {'\n'}
+            能見度: {data ? data.current.visibility : ''}m 🌅:
+            {sunriseTime ? sunriseTime : ''}
+            {'\n'}
+            🌇:{sunsetTime ? sunsetTime : ''}
+          </Text>
         </View>
-      </Pressable>
+      </View>
       {AQIData ? (
         <View style={styles.AqiResult}>
           <Text style={styles.text}>

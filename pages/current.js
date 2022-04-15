@@ -7,7 +7,6 @@ import {
   ToastAndroid,
   RefreshControl,
   ScrollView,
-  Pressable,
 } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import {PermissionsAndroid} from 'react-native';
@@ -27,7 +26,6 @@ function CurrentData() {
   const AQIResult = ['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'];
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
-  const [extend, setExtend] = useState(false);
 
   const getLocation = () => {
     PermissionsAndroid.request(

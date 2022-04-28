@@ -122,8 +122,8 @@ function CurrentData() {
             {'\n'}
             濕度: {data ? data.current.humidity : ''}% {'\n'}
             風速: {data ? data.current.wind_speed : ''}m/s {'\n'}
-            能見度: {data ? data.current.visibility : ''}m 🌅:
-            {sunriseTime ? sunriseTime : ''}
+            能見度: {data ? data.current.visibility : ''}m {'\n'}
+            🌅:{sunriseTime ? sunriseTime : ''}
             {'\n'}
             🌇:{sunsetTime ? sunsetTime : ''}
           </Text>

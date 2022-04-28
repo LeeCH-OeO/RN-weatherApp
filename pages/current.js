@@ -84,12 +84,11 @@ function CurrentData() {
   };
   const fetchCity = async (latitude, longitude) => {
     await fetch(
-      `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
+      `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&zoom=14`,
     ).then(res =>
       res.json().then(cityData => {
-        setCityName(
-          `${cityData.address.state}${cityData.address.suburb}${cityData.address.neighbourhood}  `,
-        );
+        setCityName(`${cityData.display_name}  `);
+        console.log(cityData.display_name);
       }),
     );
   };
@@ -97,8 +96,6 @@ function CurrentData() {
     setRefreshing(true);
     getLocation();
     setRefreshing(false);
-
-    console.log(data.hourly[0]);
   };
 
   return (

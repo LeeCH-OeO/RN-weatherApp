@@ -59,6 +59,7 @@ function HourlyForecast() {
     setRefreshing(true);
     getLocation();
     setRefreshing(false);
+    console.log(data.hourly[0]);
   };
   return (
     <ScrollView
@@ -84,6 +85,7 @@ function HourlyForecast() {
                   {'\n'}
                   溫度: {result.temp}°C {result.weather[0].description}
                   {'\n'}體感溫度: {result.feels_like}°C 濕度: {result.humidity}%
+                  {'\n'}降雨機率: {result.pop} 風速: {result.wind_speed}m/s
                 </Text>
 
                 <Image
